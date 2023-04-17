@@ -1,0 +1,41 @@
+<h1 style="background-color: brown;">Product List</h1>
+<div *ngFor="let product1 of product" style="background-color: grey;">
+    {{product1.id}} || {{product1.name}} ||
+     <button style="background-color: rgb(186, 188, 176);" type="button" (click)="editProduct(product1)">Edit</button>
+     <button style="background-color: rgb(43, 217, 226);" type="button" (click)="deleteProduct(product1.id)">Delete</button>
+</div>
+
+<hr>
+<form [formGroup]="loginForm" (ngSubmit)="loginProduct()" style="background-color: grey;">
+<h2 style="background-color: brown;">Add & Update Here</h2>
+Id: <input type="number" formControlName="id">
+<span style="color:red" *ngIf="id1 && id1.invalid && id1.touched">Please Enter Valid Field</span>
+<br><br>
+Name: <input type="text" formControlName="name">
+<span style="color:red" *ngIf="name1 && name1.invalid && name1.touched">Please Enter Valid Field</span>
+<br><br/>
+<button style="background-color: aqua;" type="button" (click)="addProduct()" 
+[disabled]="loginForm.invalid">Add Product </button>&nbsp;
+<button style="background-color:  rgb(186, 188, 176);"
+ type="button" (click)="updateProduct()">Update Product</button>
+</form>
+
+<hr>    
+
+
+
+    
+    
+
+
+
+
+ 
+
+
+
+
+
+
+
+

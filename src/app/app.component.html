@@ -1,0 +1,35 @@
+<!-- <h1>Hello Angular {{title}}</h1> 
+<h1>{{data}}</h1>
+<h1>{{getValue() | uppercase}}</h1>
+<h1>{{2+2}}</h1>
+<h1>{{2*2/10}}</h1>
+<h2>{{title=="blog"}}</h2>
+<h1>{{title | uppercase}}</h1>
+<h1>{{title | lowercase}}</h1>
+<h1>{{title}}</h1>
+<h2>{{today | date : 'fullDate'}}</h2>
+<h1>{{title | slice : 3 : 6 | uppercase}}</h1>
+<h1>{{user | json | uppercase}}</h1>
+<h2>{{2000.3000 | number : '2.2-3'}}</h2>
+<h1>{{20 | currency : 'USD'}}</h1>
+<h1>{{"Hello How Are You" | uppercase}}</h1>
+<h1>{{20 | usdInr :200*6}}</h1>
+<app-user-list></app-user-list>-->
+<h1 style="background-color: brown;">{{title}}</h1>
+<form style="background-color: greenyellow;" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <input type="text" placeholder="Enter Your Name" name="user" formControlName="user">
+    <br>
+    <span style="color:red" *ngIf="user && user.invalid && user.touched">Please Enter Valid Field</span>
+    <br>
+    <input type="email" placeholder="Enter Your Email Id" name="emailid" formControlName="emailid">
+    <br> 
+    <span style="color:red" *ngIf="emailid && emailid.invalid && emailid.touched">Please Enter Valid EmailId
+    </span>
+    <br>
+<input type="password" placeholder="Enter Your Password" name="password" formControlName="password">
+<br>
+<span style="color:red" *ngIf="password && password.invalid && password.touched">Minimum five Characters Required</span>
+<br>
+
+<button style="background-color: rgb(14, 114, 164);"  [disabled]="loginForm.invalid">Login</button>
+</form>
